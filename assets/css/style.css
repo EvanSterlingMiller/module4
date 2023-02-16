@@ -22,3 +22,17 @@ body {
   .hidden {
     display: none;
   }
+
+    #startView, #gameoverView {
+    text-align: center;
+  }
+
+  #start-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
