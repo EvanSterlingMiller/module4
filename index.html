@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Code Quiz Challenge</title>
+    <link rel="stylesheet" type="text/css" href=".\assets\css\style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Code Quiz Challenge</h1>
+    </header>
+    <main>
+      <div id="startView">
+        <h2>Welcome to the Code Quiz!</h2>
+        <button id="start-button">Start Quiz</button>
+      </div>
+      <div id="questionView" class="hidden">
+        <div id="question"></div>
+        <div id="options"></div>
+      </div>
+      <div id="gameoverView" class="hidden">
+        <h2>Game Over!</h2>
+        <p>Your score is: <span id="score"></span></p>
+        <form>
+          <label for="initials">Enter your initials:</label>
+          <input type="text" id="initials" name="initials">
+          <button id="save-button" type="submit">Save Score</button>
+        </form>
+      </div>
+    </main>
+    <script src=".\assets\js\script.js"></script>
+  </body>
+</html>
