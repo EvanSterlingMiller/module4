@@ -24,6 +24,11 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
+#answerStatus{
+  text-align: center;
+  margin-top: 20px;
+}
+
 #start-button {
   font-size: 1.2em;
   padding: 10px 20px;

@@ -35,6 +35,7 @@ var scoreElement = document.getElementById("score");
 var initialsElement = document.getElementById("initials");
 var saveButton = document.getElementById("save-button");
 var timer = document.getElementById("timer");
+var answerStatus = document.getElementById("answerStatus")
 
 var currentQuestionIndex;
 var score;
@@ -90,9 +91,10 @@ function handleOptionClick(event) {
   var currentQuestion = questions[currentQuestionIndex];
   if (selectedOption === currentQuestion.answer) {
     score += 10;
+    answerStatus.innerText = "Last question: ✅ Correct";
   } else {
     timeLeft -= 10;
-    prompt("wrong")
+    answerStatus.innerText = "Last question: ❌ Incorrect";
   }
   currentQuestionIndex++;
   showNextQuestion();
@@ -103,6 +105,7 @@ function endQuiz() {
   questionScreen.classList.add("hidden");
   document.getElementById("game-over-screen").classList.remove("hidden");
   scoreElement.textContent = score;
+  answerStatus.innerText = "";
 }
 
 startButton.addEventListener("click", startQuiz);
