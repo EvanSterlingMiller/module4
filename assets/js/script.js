@@ -51,7 +51,11 @@ function startQuiz() {
   showQuestionScreen();
   showNextQuestion();
   var savedData = localStorage.getItem('previousScore');
+
+  if (savedData != null) {
   lastScoreElement.innerText = "Previous Score : " + savedData
+  };
+
 }
 
 function startTimer() {
