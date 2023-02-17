@@ -36,6 +36,7 @@ var initialsElement = document.getElementById("initials");
 var saveButton = document.getElementById("save-button");
 var timer = document.getElementById("timer");
 var answerStatus = document.getElementById("answerStatus")
+var lastScoreElement = document.getElementById("lastScore");
 
 var currentQuestionIndex;
 var score;
@@ -49,13 +50,14 @@ function startQuiz() {
   startTimer();
   showQuestionScreen();
   showNextQuestion();
+  var savedData = localStorage.getItem('previousScore');
+  lastScoreElement.innerText = "Previous Score : " + savedData
 }
 
 function startTimer() {
   var timerInterval = setInterval(function() {
     timeLeft--;
     timer.innerText = "Time Remaining: " + timeLeft;
-    //need to display timer, if right or wrong and initials with score
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       endQuiz();
@@ -108,18 +110,9 @@ function endQuiz() {
   answerStatus.innerText = "";
 }
 
-startButton.addEventListener("click", startQuiz);
-saveButton.addEventListener("click", saveScore);
-
 function saveScore() {
-  var initials = initialsElement.value;
-  var scoreData = { initials, score };
-  var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  highScores.push(scoreData);
-  highScores.sort((a, b) => b.score - a.score);
-  highScores.splice(5);
-  localStorage.setItem("highScores", JSON.stringify(highScores));
-  // window.location.href = "highscores.html";
+  var thisGame = score + " by " + initialsElement.value;
+  localStorage.setItem('previousScore', thisGame);
 }
 
 startButton.addEventListener("click", startQuiz);
