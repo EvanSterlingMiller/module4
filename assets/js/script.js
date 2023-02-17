@@ -34,6 +34,7 @@ var optionsElement = document.getElementById("options");
 var scoreElement = document.getElementById("score");
 var initialsElement = document.getElementById("initials");
 var saveButton = document.getElementById("save-button");
+var timer = document.getElementById("timer");
 
 var currentQuestionIndex;
 var score;
@@ -52,6 +53,7 @@ function startQuiz() {
 function startTimer() {
   var timerInterval = setInterval(function() {
     timeLeft--;
+    timer.innerText = "Time Remaining: " + timeLeft;
     //need to display timer, if right or wrong and initials with score
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
