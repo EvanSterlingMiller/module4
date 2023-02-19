@@ -1,3 +1,5 @@
+
+// this is an array that assigs an object that contains the question and answer to a variable
 var questions = [
   {
     question: "In an if/else statement, what is the condition enclosed in?",
@@ -27,6 +29,7 @@ var questions = [
   }
 ];
 
+// assigning html elements to specific variables
 var startButton = document.getElementById("start-button");
 var questionScreen = document.getElementById("question-screen");
 var questionElement = document.getElementById("question");
@@ -43,6 +46,7 @@ var score;
 var timeLeft;
 var timerInterval = 0;
 
+// this function is called by an event listner to start the game
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
@@ -69,6 +73,7 @@ function startTimer() {
   }, 1000);
 }
 
+// this function changes to the html to hide what the other views and display a quesion
 function showQuestionScreen() {
   document.getElementById("start-screen").classList.add("hidden");
   questionScreen.classList.remove("hidden");
@@ -114,6 +119,7 @@ function endQuiz() {
   answerStatus.innerText = "";
 }
 
+// this function saves the score and usersname to local storage to be displayed in the next game
 function saveScore() {
   var thisGame = score + " by " + initialsElement.value;
   localStorage.setItem('previousScore', thisGame);
