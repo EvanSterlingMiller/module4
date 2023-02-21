@@ -72,12 +72,6 @@ button.option {
   cursor: pointer;
 }
 
-#game-over-screen input[type="text"] {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
 
 #save-button {
   font-size: 1.2em;
